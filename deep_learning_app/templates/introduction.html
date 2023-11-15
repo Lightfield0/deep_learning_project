@@ -2,62 +2,73 @@
 
 {% block title %}Derin Öğrenmeye Giriş{% endblock %}
 
-
 {% block content %}
-<div class="container mt-5">
-    <div class="jumbotron text-center">
-        <h1 class="display-4" id="main-title">Derin Öğrenmeye Giriş</h1>
-        <p class="lead" id="main-desc">
-            Deep learning, büyük veri setlerinden örüntüleri tanıyarak öğrenen gelişmiş bir yapay zeka tekniğidir.
-        </p>
-        <hr class="my-4">
-        <p id="additional-info">
-            Bu teknik, görüntü ve ses tanıma, doğal dil işleme gibi birçok alanda devrim niteliğinde ilerlemelere yol açmıştır.
-        </p>
+    <!-- Hero Section -->
+    <div class="text-center py-16 bg-gradient-to-r from-green-400 to-blue-500 text-white" id="hero-section">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-4" id="main-title">Derin Öğrenmenin Dünyasına Hoş Geldiniz</h1>
+            <p class="text-xl mb-6" id="main-desc">
+                Deep learning, veri biliminin sınırlarını zorlayan, yenilikçi bir yapay zeka yaklaşımıdır.
+            </p>
+        </div>
     </div>
 
-    <section id="more-details" class="mt-4">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 id="why-deep-learning">Neden Derin Öğrenme?</h2>
-                <p>
-                    Derin öğrenme, karmaşık problem çözme ve analiz yetenekleri sayesinde, geleneksel makine öğrenme tekniklerinden daha etkili sonuçlar sunar. 
+    <!-- İçerik Bölümü -->
+    <section class="py-12" id="content-section">
+        <div class="container mx-auto px-4">
+            <!-- Neden Derin Öğrenme -->
+            <div class="mb-10">
+                <h2 class="text-3xl font-semibold text-center mb-4" id="why-deep-learning">Neden Derin Öğrenme?</h2>
+                <p class="text-lg text-center mx-auto max-w-2xl">
+                    Geleneksel makine öğrenme yöntemlerinin ötesine geçen derin öğrenme, karmaşık veri yapılarını analiz etme ve anlama konusunda devrim niteliğindedir. Otomatik sürüşten sağlık teşhisine kadar birçok alanda kullanılmaktadır.
                 </p>
             </div>
-            <div class="col-md-12 mt-4">
-                <h2 id="basic-terms">Temel Terimler ve Kavramlar</h2>
-                <p>
-                    <strong>Yapay Sinir Ağları:</strong> Beynin işleyişini taklit eden matematiksel modeller. <br>
-                    <strong>Eğitim Veri Seti:</strong> Modelin öğrenmesi için kullanılan veri koleksiyonu. <br>
-                    <strong>Öğrenme Oranı:</strong> Modelin eğitim sürecindeki adaptasyon hızını belirleyen parametre. <br>
-                    <strong>Derinlik:</strong> Modeldeki katman sayısı; daha fazla katman, genellikle daha detaylı öğrenmeyi ifade eder.
-                </p>
+
+            <!-- Temel Terimler -->
+            <div class="mb-10">
+                <h2 class="text-3xl font-semibold text-center mb-4" id="basic-terms">Temel Terimler ve Kavramlar</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Yapay Sinir Ağları -->
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h3 class="font-semibold text-xl">Yapay Sinir Ağları</h3>
+                        <p>Beynin işleyişini taklit eden matematiksel modellerdir ve öğrenme sürecini simüle ederler.</p>
+                    </div>
+                    <!-- Eğitim Veri Seti -->
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h3 class="font-semibold text-xl">Eğitim Veri Seti</h3>
+                        <p>Modelin öğrenmesi ve gelişmesi için kullanılan, çeşitli verileri içeren koleksiyondur.</p>
+                    </div>
+                    <!-- Öğrenme Oranı -->
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h3 class="font-semibold text-xl">Öğrenme Oranı</h3>
+                        <p>Modelin eğitim sürecinde ne kadar hızlı veya yavaş adaptasyon sağlayacağını belirler.</p>
+                    </div>
+                    <!-- Derinlik -->
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h3 class="font-semibold text-xl">Derinlik</h3>
+                        <p>Modeldeki katman sayısı; genellikle daha fazla katman, daha ayrıntılı öğrenme anlamına gelir.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-12 mt-4">
-                <h2 id="basic-principles">Temel Prensipler</h2>
-                <p>
-                    Derin öğrenme modelleri, verilerdeki örüntüleri tespit ederek bu bilgileri yeni, görülmemiş veriler üzerinde tahmin yapmak için kullanır. Bu süreç, sürekli veri analizi ve modelin iyileştirilmesi üzerine kuruludur.
+
+            <!-- Temel Prensipler -->
+            <div>
+                <h2 class="text-3xl font-semibold text-center mb-4" id="basic-principles">Temel Prensipler</h2>
+                <p class="text-lg text-center mx-auto max-w-2xl">
+                    Derin öğrenme, verilerde gizli örüntüleri ve ilişkileri keşfederek bu bilgileri yeni durumlar için tahmin yapmakta kullanır. Bu süreç, sürekli veri analizi ve algoritmik iyileştirmeler üzerine kuruludur.
                 </p>
             </div>
         </div>
     </section>
 
-    <div class="fixed-bottom text-right mb-3 mr-3">
-        <a class="btn btn-primary" href="{% url 'types-of-nn' %}" role="button" id="next-topic-btn">Sonraki Konu</a>
+    <!-- Next Topic Button -->
+    <div class="fixed bottom-0 right-0 mb-4 mr-4">
+        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300" href="{% url 'types-of-nn' %}" role="button" id="next-topic-btn">Sonraki Konu</a>
     </div>
-</div>
 
-<script>
-    gsap.from("#main-title", { duration: 1, y: -100, opacity: 0 });
-    gsap.from("#main-desc", { duration: 1, y: -100, opacity: 0, delay: 0.5 });
-    gsap.from("#additional-info", { duration: 1, y: -100, opacity: 0, delay: 1 });
-    gsap.from("#why-deep-learning, #basic-terms, #basic-principles", { duration: 1, opacity: 0, delay: 1.5, stagger: 0.5 });
-    gsap.from("#next-topic-btn", { duration: 1, y: 100, opacity: 0, delay: 2.5 });
-</script>
-
-    <style>
-        #hover-btn:hover {
-            transform: scale(1.1); /* Örnek bir transform efekti. Dilerseniz başka bir efekt ekleyebilirsiniz. */
-        }
-    </style>
+    <script>
+        gsap.from("#hero-section", {duration: 1.5, y: -100, opacity: 0});
+        gsap.from("#content-section h2, #content-section p", {duration: 1, y: 100, opacity: 0, delay: 0.5, stagger: 0.2});
+        gsap.from("#next-topic-btn", {duration: 1, y: 100, opacity: 0, delay: 1.5});
+    </script>
 {% endblock %}
