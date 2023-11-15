@@ -3,66 +3,75 @@
 {% block title %}Sinir Ağları Türleri{% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
-        <div class="jumbotron text-center animate__animated animate__fadeIn">
-            <h1 class="display-4">Sinir Ağları Türleri</h1>
-            <p class="lead">
-                Sinir ağları, yapay zeka modelleridir ve çeşitli türleri farklı görevleri yerine getirir.
-            </p>
-        </div>
-
-        <section class="my-4">
-            <div class="text-center">
-                <h2 class="mb-4 animate__animated animate__fadeIn">Temel Kavramlar</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-4 animate__animated animate__fadeInLeft">
-                    <div class="card p-3 mb-3">
-                        <h3>Katmanlar</h3>
-                        <p>Yapay sinir ağlarının temel yapı taşlarıdır ve giriş, gizli ve çıkış katmanlarından oluşur.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 animate__animated animate__fadeIn">
-                    <div class="card p-3 mb-3">
-                        <h3>Nöronlar</h3>
-                        <p>Her katmandaki işlem birimleridir ve veri ile ağırlıkları işleyerek sonuç üretirler.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 animate__animated animate__fadeInRight">
-                    <div class="card p-3 mb-3">
-                        <h3>Aktivasyon Fonksiyonları</h3>
-                        <p>Nöron çıktılarını belirleyen matematiksel işlevlerdir ve çeşitleri arasında ReLU, Sigmoid, Tanh bulunur.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="my-4">
-            <div class="text-center">
-                <h2 class="mb-4 animate__animated animate__fadeIn">Sinir Ağları Türleri</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-6 animate__animated animate__fadeInLeft">
-                    <div class="card p-3 mb-3" style="background-color: #f0f8ff;">
-                        <h3>Yapay Sinir Ağları (ANN)</h3>
-                        <p>Veri sınıflandırma, regresyon gibi temel görevlerde kullanılır.</p>
-                    </div>
-                    <div class="card p-3 mb-3" style="background-color: #f0f8ff;">
-                        <h3>Rekürrent Sinir Ağları (RNN)</h3>
-                        <p>Zaman serisi verileri ve doğal dil işleme için uygundur ve önceki bilgileri gelecekteki işlemlere aktarabilir.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 animate__animated animate__fadeInRight">
-                    <div class="card p-3 mb-3" style="background-color: #f0f8ff;">
-                        <h3>Konvolüsyonel Sinir Ağları (CNN)</h3>
-                        <p>Görüntü işleme ve tanıma görevlerinde etkilidir ve örüntü tanıma yeteneğine sahiptir.</p>
-                    </div>
-                    <div class="card p-3 mb-3" style="background-color: #f0f8ff;">
-                        <h3>Derin Güçlendirme Ağları (DQN)</h3>
-                        <p>Karar verme ve oyun teorisi uygulamalarında kullanılır ve ödül tabanlı öğrenme modeline dayanır.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="container mt-5">
+    <div class="jumbotron text-center" id="intro-section">
+        <h1 class="display-4">Sinir Ağları Türleri</h1>
+        <p class="lead">
+            Sinir ağları, yapay zeka modelleridir ve farklı türleri, farklı görevleri yerine getirir.
+        </p>
     </div>
+
+    <section class="my-4" id="basic-concepts">
+        <div class="text-center">
+            <h2 class="mb-4">Temel Kavramlar</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card p-3 mb-3">
+                    <h3>Katmanlar</h3>
+                    <p>Yapay sinir ağlarının temel yapı taşlarıdır. Verilerin ağı geçerken işlendiği katmanlardır ve her biri belirli bir işleve sahiptir.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3 mb-3">
+                    <h3>Nöronlar</h3>
+                    <p>Her katmandaki işlem birimleridir. Giriş verilerini alır, ağırlıklar ile işler ve bir çıktı üretirler.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3 mb-3">
+                    <h3>Aktivasyon Fonksiyonları</h3>
+                    <p>Nöron çıktılarını belirleyen işlevlerdir. ReLU, Sigmoid ve Tanh gibi çeşitleri vardır ve her biri farklı özelliklere sahiptir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-4" id="types-of-nn">
+        <div class="text-center">
+            <h2 class="mb-4">Sinir Ağları Türleri</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-3 mb-3" style="background-color: #f0f8ff;">
+                    <h3>Yapay Sinir Ağları (ANN)</h3>
+                    <p>Veri sınıflandırma, regresyon ve diğer temel görevlerde kullanılır. Esnek yapısıyla geniş bir uygulama alanına sahiptir.</p>
+                </div>
+                <div class="card p-3 mb-3" style="background-color: #f0f8ff;">
+                    <h3>Rekürrent Sinir Ağları (RNN)</h3>
+                    <p>Zaman serisi analizi ve doğal dil işleme alanlarında başarılıdır. Önceki bilgileri gelecek tahminlerine aktarabilme yeteneğine sahiptir.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3 mb-3" style="background-color: #f0f8ff;">
+                    <h3>Konvolüsyonel Sinir Ağları (CNN)</h3>
+                    <p>Görüntü işleme ve tanıma konusunda etkilidir. Özellikle görsel veriler üzerinde örüntü tanıma ve sınıflandırma yapabilir.</p>
+                </div>
+                <div class="card p-3 mb-3" style="background-color: #f0f8ff;">
+                    <h3>Derin Güçlendirme Ağları (DQN)</h3>
+                    <p>Ödül tabanlı öğrenme ile karar verme ve oyun teorisi uygulamalarında kullanılır. Karmaşık stratejiler geliştirebilir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    // GSAP Animasyonları
+    gsap.from("#intro-section", {duration: 1, y: -100, opacity: 0});
+    gsap.from("#basic-concepts h2", {duration: 1, x: -200, opacity: 0, delay: 0.5});
+    gsap.from("#basic-concepts .col-md-4", {duration: 1, y: 100, opacity: 0, delay: 0.6, stagger: 0.3});
+    gsap.from("#types-of-nn h2", {duration: 1, x: 200, opacity: 0, delay: 1});
+    gsap.from("#types-of-nn .col-md-6", {duration: 1, y: 100, opacity: 0, delay: 1.1, stagger: 0.3});
+</script>
 {% endblock %}

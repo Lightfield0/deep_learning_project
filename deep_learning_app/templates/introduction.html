@@ -2,60 +2,62 @@
 
 {% block title %}Derin Öğrenmeye Giriş{% endblock %}
 
+
 {% block content %}
 <div class="container mt-5">
     <div class="jumbotron text-center">
-        <h1 class="display-4">Derin Öğrenmeye Giriş</h1>
-        <p class="lead">
-            Deep learning, verilerden öğrenen gelişmiş bir makine öğrenme tekniğidir. Yapay sinir ağları kullanarak, bilgisayar sistemlerine karmaşık görevleri öğrenme ve gerçekleştirme yeteneği kazandırır.
+        <h1 class="display-4" id="main-title">Derin Öğrenmeye Giriş</h1>
+        <p class="lead" id="main-desc">
+            Deep learning, büyük veri setlerinden örüntüleri tanıyarak öğrenen gelişmiş bir yapay zeka tekniğidir.
         </p>
         <hr class="my-4">
-        <p>
-            Bu alan, görüntü tanıma, doğal dil işleme ve ses tanıma gibi alanlarda devrim yaratmıştır.
+        <p id="additional-info">
+            Bu teknik, görüntü ve ses tanıma, doğal dil işleme gibi birçok alanda devrim niteliğinde ilerlemelere yol açmıştır.
         </p>
     </div>
 
     <section id="more-details" class="mt-4">
         <div class="row">
             <div class="col-md-12">
-                <h2>Neden Derin Öğrenme?</h2>
+                <h2 id="why-deep-learning">Neden Derin Öğrenme?</h2>
                 <p>
-                    Derin öğrenme, büyük ve karmaşık veri setleri üzerinde etkili bir şekilde çalışabilir. Bu, özellikle büyük veri çağında veri tabanlı karar verme, tahminler ve tanımlamalar yaparken önemlidir. Gelişmiş görüntü ve ses tanıma, doğal dil işleme ve oyun teorisi gibi alanlarda kritik rol oynar.
+                    Derin öğrenme, karmaşık problem çözme ve analiz yetenekleri sayesinde, geleneksel makine öğrenme tekniklerinden daha etkili sonuçlar sunar. 
                 </p>
             </div>
             <div class="col-md-12 mt-4">
-                <h2>Temel Terimler ve Kavramlar</h2>
+                <h2 id="basic-terms">Temel Terimler ve Kavramlar</h2>
                 <p>
-                    <strong>Yapay Sinir Ağları:</strong> İnsan beyninin işleyişini taklit eden bilgisayar modelleri. <br>
-                    <strong>Eğitim Veri Seti:</strong> Modelin öğrenmesi için kullanılan veriler. <br>
-                    <strong>Öğrenme Oranı:</strong> Modelin öğrenme sürecinde ne kadar hızlı ayarlamalar yapacağını belirleyen parametre. <br>
-                    <strong>Derinlik:</strong> Yapay sinir ağının katman sayısı. Daha fazla katman, genellikle daha karmaşık öğrenme yetenekleri anlamına gelir.
+                    <strong>Yapay Sinir Ağları:</strong> Beynin işleyişini taklit eden matematiksel modeller. <br>
+                    <strong>Eğitim Veri Seti:</strong> Modelin öğrenmesi için kullanılan veri koleksiyonu. <br>
+                    <strong>Öğrenme Oranı:</strong> Modelin eğitim sürecindeki adaptasyon hızını belirleyen parametre. <br>
+                    <strong>Derinlik:</strong> Modeldeki katman sayısı; daha fazla katman, genellikle daha detaylı öğrenmeyi ifade eder.
                 </p>
             </div>
             <div class="col-md-12 mt-4">
-                <h2>Temel Prensipler</h2>
+                <h2 id="basic-principles">Temel Prensipler</h2>
                 <p>
-                    Derin öğrenme, veri setlerinden örüntüleri ve yapıları tespit etmeye dayanır. Bir model eğitildikten sonra, bu örüntüleri tanıyabilir ve yeni, görülmemiş veriler üzerinde tahminlerde bulunabilir. Sürekli iyileştirme ve veriye dayalı ayarlama, bu teknolojinin temelini oluşturur.
+                    Derin öğrenme modelleri, verilerdeki örüntüleri tespit ederek bu bilgileri yeni, görülmemiş veriler üzerinde tahmin yapmak için kullanır. Bu süreç, sürekli veri analizi ve modelin iyileştirilmesi üzerine kuruludur.
                 </p>
             </div>
         </div>
     </section>
 
-    <div class="text-right mb-3 mr-3 fixed-bottom" style="bottom: 70px; right: 20px;">
+    <div class="fixed-bottom text-right mb-3 mr-3">
         <a class="btn btn-primary" href="{% url 'types-of-nn' %}" role="button" id="next-topic-btn">Sonraki Konu</a>
     </div>
 </div>
 
-{% endblock %}
-
-{% block scripts %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
 <script>
-    // GSAP Animasyonları
-    gsap.from(".jumbotron", {duration: 1, y: -50, opacity: 0, ease: "bounce"});
-    gsap.from("#more-details > .row > div", {duration: 1, x: -100, opacity: 0, stagger: 0.2});
-    gsap.from("#next-topic-btn", {duration: 1, y: 20, opacity: 0, delay: 1});
-
-    // Ekstra animasyonlar eklenebilir
+    gsap.from("#main-title", { duration: 1, y: -100, opacity: 0 });
+    gsap.from("#main-desc", { duration: 1, y: -100, opacity: 0, delay: 0.5 });
+    gsap.from("#additional-info", { duration: 1, y: -100, opacity: 0, delay: 1 });
+    gsap.from("#why-deep-learning, #basic-terms, #basic-principles", { duration: 1, opacity: 0, delay: 1.5, stagger: 0.5 });
+    gsap.from("#next-topic-btn", { duration: 1, y: 100, opacity: 0, delay: 2.5 });
 </script>
+
+    <style>
+        #hover-btn:hover {
+            transform: scale(1.1); /* Örnek bir transform efekti. Dilerseniz başka bir efekt ekleyebilirsiniz. */
+        }
+    </style>
 {% endblock %}
