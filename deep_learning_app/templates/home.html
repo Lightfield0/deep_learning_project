@@ -1,0 +1,28 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}Deep Learning Web Sitesi{% endblock %}
+
+{% block content %}
+<body>
+    
+
+    <!-- Hero Section -->
+    <header class="hero bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Deep Learning ile Tanışın</h1>
+            <p class="lead">Deep learning projeleri ve uygulamaları hakkında bilgi edinin.</p>
+            <a href="{%url 'introduction' %}" class="btn btn-light btn-lg">Daha Fazla Bilgi</a>
+        </div>
+    </header>
+
+    <!-- İçerik Bölümü -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="display-4 text-center">Deep Learning Hakkında</h2>
+            <p class="lead text-center">Deep learning, yapay zeka alanında büyük bir ilerleme sağlayan bir teknolojidir.</p>
+        </div>
+    </section>
+
+</body>
+{% endblock %}

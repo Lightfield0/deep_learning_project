@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block title %}Derin Öğrenmeye Giriş{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="jumbotron text-center">
+            <h1 class="display-4 animate__animated animate__fadeInDown">Derin Öğrenmeye Giriş</h1>
+            <p class="lead animate__animated animate__fadeInUp">
+                Deep learning, verilerden öğrenen gelişmiş bir makine öğrenme tekniğidir. Yapay sinir ağları kullanarak, bilgisayar sistemlerine karmaşık görevleri öğrenme ve gerçekleştirme yeteneği kazandırır.
+            </p>
+            <hr class="my-4">
+            <p class="animate__animated animate__fadeIn">
+                Bu alan, görüntü tanıma, doğal dil işleme ve ses tanıma gibi alanlarda devrim yaratmıştır.
+            </p>
+        </div>
+
+        <section id="more-details">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="animate__animated animate__fadeInLeft">Neden Derin Öğrenme?</h2>
+                    <p class="animate__animated animate__fadeInLeft">
+                        Derin öğrenme, büyük ve karmaşık veri setleri üzerinde etkili bir şekilde çalışabilir. Bu, özellikle büyük veri çağında veri tabanlı karar verme, tahminler ve tanımlamalar yaparken önemlidir. Gelişmiş görüntü ve ses tanıma, doğal dil işleme ve oyun teorisi gibi alanlarda kritik rol oynar.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="animate__animated animate__fadeInRight">Temel Terimler ve Kavramlar</h2>
+                    <p class="animate__animated animate__fadeInRight">
+                        <strong>Yapay Sinir Ağları:</strong> İnsan beyninin işleyişini taklit eden bilgisayar modelleri. <br>
+                        <strong>Eğitim Veri Seti:</strong> Modelin öğrenmesi için kullanılan veriler. <br>
+                        <strong>Öğrenme Oranı:</strong> Modelin öğrenme sürecinde ne kadar hızlı ayarlamalar yapacağını belirleyen parametre. <br>
+                        <strong>Derinlik:</strong> Yapay sinir ağının katman sayısı. Daha fazla katman, genellikle daha karmaşık öğrenme yetenekleri anlamına gelir.
+                    </p>
+                </div>
+                <div class="col-md-12 mt-4">
+                    <h2 class="animate__animated animate__fadeInUp">Temel Prensipler</h2>
+                    <p class="animate__animated animate__fadeInUp">
+                        Derin öğrenme, veri setlerinden örüntüleri ve yapıları tespit etmeye dayanır. Bir model eğitildikten sonra, bu örüntüleri tanıyabilir ve yeni, görülmemiş veriler üzerinde tahminlerde bulunabilir. Sürekli iyileştirme ve veriye dayalı ayarlama, bu teknolojinin temelini oluşturur.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="fixed-bottom text-right mb-3 mr-3" style="text-align: right; bottom: 70px; right: 20px;">
+            <a class="btn btn-primary animate__animated animate__fadeIn" href="{% url 'types-of-nn' %}" role="button" id="hover-btn">Sonraki Konu</a>
+        </div>
+    </div>
+
+    <style>
+        #hover-btn:hover {
+            transform: scale(1.1); /* Örnek bir transform efekti. Dilerseniz başka bir efekt ekleyebilirsiniz. */
+        }
+    </style>
+{% endblock %}
