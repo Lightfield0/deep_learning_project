@@ -1,0 +1,108 @@
+{% extends 'layout.html' %}
+
+{% block title %}Hakkımızda{% endblock %}
+
+{% block content %}
+<body class="bg-gray-100">
+
+    <!-- Hero Section with Dynamic Parallax Effect -->
+    <div class="relative bg-fixed bg-cover bg-center py-32" style="background-image: url('images/hero-bg.jpg');" id="hero-section">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-transparent opacity-75"></div>
+        <div class="container mx-auto px-4 relative">
+            <h1 class="text-6xl font-bold text-white leading-tight mb-4">Inovasyonun Öncüsü</h1>
+            <p class="text-xl text-white mb-6">Teknoloji ve Yenilikçilikte Sınır Tanımayan Yaklaşımlarımızla Tanışın.</p>
+            <a href="#values-mission" class="bg-white text-purple-700 font-semibold py-3 px-8 rounded-lg shadow hover:shadow-lg transition duration-300 ease-in-out">Keşfet</a>
+        </div>
+    </div>
+
+    <!-- Values and Mission Section with Animated Cards -->
+    <section id="values-mission" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Değerlerimiz ve Misyonumuz</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="value-card bg-white hover:bg-gray-100 rounded-lg border border-transparent hover:border-purple-500 shadow-lg p-6 transition duration-300 ease-in-out hover:shadow-2xl hover:scale-110">
+                    <h3 class="text-2xl font-semibold mb-3">Yenilik</h3>
+                    <p>Teknolojide sürekli yenilik peşinde koşarak, sektördeki standartları yükseltmeyi hedefliyoruz.</p>
+                </div>
+                <div class="value-card bg-white rounded-lg shadow-xl p-6 hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold mb-3">Sürdürülebilirlik</h3>
+                    <p>Çevreye duyarlı çözümler üreterek, sürdürülebilir bir geleceğe katkıda bulunuyoruz.</p>
+                </div>
+                <div class="value-card bg-white rounded-lg shadow-xl p-6 hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold mb-3">Toplumsal Etki</h3>
+                    <p>Toplumu dönüştürecek projelerle, daha iyi bir dünya için çalışıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section with Carousel -->
+    <section class="py-16 bg-gray-200">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8">Ekibimiz</h2>
+            <div class="team-carousel owl-carousel owl-theme">
+                <div class="item">
+                    <img src="images/team-member-1.jpg" alt="Team Member 1" class="rounded-full w-32 h-32 mx-auto mb-4">
+                    <h3 class="font-semibold text-lg">Ayşe Yılmaz</h3>
+                    <p class="text-sm text-gray-600">Geliştirici</p>
+                </div>
+                <div class="item">
+                    <!-- Other team members -->
+                </div>
+                <!-- Add more team members here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Popups for Team Members -->
+    <!-- Modal for Ayşe Yılmaz -->
+    <div id="modal-member1" class="hidden modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white p-5 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-2">Ayşe Yılmaz</h2>
+            <p class="mb-4">Ayşe, şirketin yazılım geliştirme alanındaki başarılı projelerin arkasındaki isim. Modern teknolojiler ve yenilikçi çözümler konusunda uzman.</p>
+            <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-300" onclick="closeModal('modal-member1')">Kapat</button>
+        </div>
+    </div>
+    <!-- Additional modals for other team members -->
+
+    <!-- Contact Section with Enhanced Interactive Form -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8">İletişim</h2>
+            <!-- Contact form -->
+            <form>
+                <!-- Form fields -->
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        // GSAP Animations and Owl Carousel Initialization
+        gsap.from("#hero-section", {duration: 1.5, y: -50, opacity: 0});
+        gsap.from("#values-mission", {duration: 1, opacity: 0, delay: 0.5});
+        gsap.from(".team-carousel", {duration: 1, x: -100, opacity: 0, delay: 0.8});
+
+        $('.team-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            responsive:{
+                0:{ items:1 },
+                600:{ items:2 },
+                1000:{ items:3 }
+            }
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
+</body>
+{% endblock %}

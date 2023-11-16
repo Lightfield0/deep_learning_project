@@ -10,3 +10,6 @@ def introduction(request):
 
 def types_of_nn(request):
     return render(request,'types-of-nn.html')
+
+def about_us(request):
+    return render(request,'about_us.html')
