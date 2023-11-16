@@ -1,9 +1,12 @@
+{% load static %}
+
 <!-- Navbar -->
 <nav class="bg-gray-800">
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-16">
             <div class="flex items-center">
-                <a class="text-white font-semibold text-xl" href="#">Deep Learning</a>
+                <img src="{% static 'Siyah_Minimalist_Sade_Marka_Logo.png' %}" alt="Logo" class="h-10 w-10 mr-2">
+                <a class="text-white font-semibold text-xl" href="{%url 'home' %}">Deep Learning</a>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="{%url 'home' %}">Ana Sayfa</a>
