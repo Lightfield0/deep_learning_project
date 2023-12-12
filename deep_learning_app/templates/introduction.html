@@ -13,6 +13,16 @@
         </div>
     </div>
 
+    <!-- Derin Öğrenme Nasıl Çalışır -->
+    <div class="py-12 bg-gray-100" id="how-deep-learning-works">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-4">Derin Öğrenme Nasıl Çalışır?</h2>
+            <p class="text-lg text-center mx-auto max-w-4xl">
+                Derin öğrenme, insan beyninin çalışma şekline göre genel hatlarıyla modellenen algoritmalar olan sinir ağlarının katmanları tarafından desteklenir. Büyük miktarlarda veri ile eğitim, sinir ağındaki nöronları konfigüre etmektir. Sonuç, eğitildikten sonra yeni verileri işleyen derin öğrenme modelidir. Derin öğrenme modelleri, birden fazla veri kaynağından bilgi alır ve bu verileri insan müdahalesine gerek kalmadan gerçek zamanlı olarak analiz eder. Derin öğrenmede, grafik işleme birimleri (GPU'lar), aynı anda birden fazla hesaplamayı işleyebildikleri için eğitim modellerine yönelik olarak optimize edilmiştir.
+            </p>
+        </div>
+    </div>
+
     <!-- İçerik Bölümü -->
     <section class="py-12" id="content-section">
         <div class="container mx-auto px-4">
@@ -63,12 +73,13 @@
 
     <!-- Next Topic Button -->
     <div class="fixed bottom-0 right-0 mb-4 mr-4">
-        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300" href="{% url 'types-of-nn' %}" role="button" id="next-topic-btn">Sonraki Konu</a>
+        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300" href="{% url 'how-it-works' %}" role="button" id="next-topic-btn">Sonraki Konu</a>
     </div>
 
     <script>
         gsap.from("#hero-section", {duration: 1.5, y: -100, opacity: 0});
         gsap.from("#content-section h2, #content-section p", {duration: 1, y: 100, opacity: 0, delay: 0.5, stagger: 0.2});
+        gsap.from("#how-deep-learning-works", {duration: 1, y: 100, opacity: 0, delay: 1.8, stagger: 0.2});
         gsap.from("#next-topic-btn", {duration: 1, y: 100, opacity: 0, delay: 1.5});
     </script>
 {% endblock %}

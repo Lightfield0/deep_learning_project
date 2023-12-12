@@ -13,3 +13,6 @@ def types_of_nn(request):
 
 def about_us(request):
     return render(request,'about_us.html')
+
+def how_it_works(request):
+    return render(request, 'how_it_works.html')

@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Derin Öğrenme Nasıl Çalışır{% endblock %}
+
+{% block content %}
+    <!-- Giriş Bölümü -->
+    <div class="container mx-auto px-4">
+        <div class="text-center py-10" id="intro-section">
+            <h1 class="text-4xl font-bold mb-3">Derin Öğrenme Nasıl Çalışır?</h1>
+            <p class="text-lg">
+                Derin öğrenme algoritmaları, insan beyninden esinlenilerek modellenen sinir ağlarıdır. Örneğin, bir insan beyni, bilgiyi öğrenmek ve işlemek için birlikte çalışan milyonlarca birbirine bağlı nöron içerir. Benzer şekilde, derin öğrenme sinir ağları veya yapay sinir ağları, bilgisayar içinde birlikte çalışan birçok yapay nöron katmanından oluşur.
+                Yapay nöronlar, verileri işlemek için matematiksel hesaplamalar kullanan ve düğüm adı verilen yazılım modülleridir. Yapay sinir ağları, karmaşık problemleri çözmek için bu düğümleri kullanan derin öğrenme algoritmalarıdır.
+            </p>
+        </div>
+
+        <!-- Resim Alanı (Placeholder) -->
+        <div class="my-8 text-center" id="nn-image-placeholder">
+            <img src="{% static 'intro-gluon-1.gif' %}" class="mx-auto h-auto w-full max-w-md rounded-lg shadow-lg">
+        </div>
+
+        <!-- Derin Öğrenme Ağlarının Bileşenleri -->
+        <div class="my-8" id="components-of-nn">
+            <h2 class="text-3xl text-center font-semibold mb-6">Derin Öğrenme Ağının Bileşenleri</h2>
+            <div class="flex flex-wrap justify-center">
+                <!-- Girdi Katmanı -->
+                <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h3 class="font-semibold text-xl mb-3">Girdi Katmanı</h3>
+                        <p>Yapay sinir ağının veri aldığı ilk düğümlerdir.</p>
+                    </div>
+                </div>
+
+                <!-- Gizli Katmanlar -->
+                <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h3 class="font-semibold text-xl mb-3">Gizli Katmanlar</h3>
+                        <p>Gizli katmanlar, yapay sinir ağlarının en önemli ve karmaşık bölümüdür. Bu katmanlar, veriyi işler ve çeşitli özellikler üzerinden analiz eder. Her bir gizli katman, veriyi farklı bir perspektiften işler ve bu işlem, ağın derinlik kazandıkça daha karmaşık hale gelir.</p>
+                    </div>
+                </div>
+
+                <!-- Çıktı Katmanı -->
+                <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h3 class="font-semibold text-xl mb-3">Çıktı Katmanı</h3>
+                        <p>Çıktı katmanı, çıktı verileri veren düğümlerden oluşur. "Evet" veya "hayır" yanıtlarını veren derin öğrenme modellerinin çıktı katmanında yalnızca iki düğüm bulunur. Öte yandan, daha geniş bir cevap yelpazesi verenler daha fazla düğüme sahiptir. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <!-- Animasyon Scriptleri -->
+    <script>
+        gsap.from("#intro-section", {duration: 1, y: -100, opacity: 0});
+        gsap.from("#components-of-nn h2", {duration: 1, x: -200, opacity: 0, delay: 0.5});
+        gsap.from("#components-of-nn .p-4", {duration: 1, y: 100, opacity: 0, delay: 0.6, stagger: 0.2});
+        gsap.from("#nn-image-placeholder", {duration: 1, x: 200, opacity: 0, delay: 1});
+    </script>
+{% endblock %}
