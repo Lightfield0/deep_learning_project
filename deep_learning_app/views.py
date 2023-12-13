@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import TeamMember
 
 # Create your views here.
 
@@ -12,7 +13,8 @@ def types_of_nn(request):
     return render(request,'types-of-nn.html')
 
 def about_us(request):
-    return render(request,'about_us.html')
+    members = TeamMember.objects.all()
+    return render(request,'about_us.html', {'members': members})
 
 def how_it_works(request):
     return render(request, 'how_it_works.html')

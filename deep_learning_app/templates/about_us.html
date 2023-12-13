@@ -47,41 +47,44 @@
     <section class="py-16 bg-gray-200">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-8">Ekibimiz</h2>
-            <div class="team-carousel owl-carousel owl-theme">
-                <div class="item">
-                    <img src="#" alt="Team Member 1" class="rounded-full w-32 h-32 mx-auto mb-4 cursor-pointer" onclick="openModal('modal-member1')">
-                    <h3 class="font-semibold text-lg">Mehmet Furkan Güneş</h3>
-                    <p class="text-sm text-gray-600">Geliştirici</p>
-                </div>
-                <div class="item">
-                    <!-- Other team members -->
-                </div>
-                <!-- Add more team members here -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center justify-center">
+                {% for member in members %}
+                    <div class="item flex flex-col items-center justify-center">
+                        <img src="{% static member.photo.url %}" alt="{{ member.name }}" class="rounded-full w-32 h-32 mb-4 cursor-pointer" onclick="openModal('modal-member-{{ forloop.counter }}')">
+                        <h3 class="font-semibold text-lg">{{ member.name }}</h3>
+                        <p class="text-sm text-gray-600">{{ member.title }}</p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- Modal Popups for Team Members -->
-    <!-- Modal for Mehmet Furkan Güneş -->
-    <div id="modal-member1" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 overflow-y-auto h-full w-full">
-        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-            <!-- Modal Header -->
-            <div class="flex justify-between items-center pb-3">
-                <p class="text-2xl font-bold">Mehmet Furkan Güneş</p>
-                <div class="cursor-pointer z-50" onclick="closeModal('modal-member1')">
-                    <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                        <path d="M11.245 9.018l6.369-6.369a1.004 1.004 0 00-1.421-1.42L9.825 7.597 3.456 1.229a1.004 1.004 0 00-1.421 1.42l6.369 6.369-6.369 6.369a1.004 1.004 0 001.421 1.42l6.369-6.369 6.369 6.369a1.004 1.004 0 001.421-1.42z"/>
-                    </svg>
+    
+
+
+    {% for member in members %}
+        <!-- Modal Popup -->
+        <div id="modal-member-{{ forloop.counter }}" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 overflow-y-auto h-full w-full">
+            <!-- Modal Content -->
+            <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+                <!-- Modal Header -->
+                <div class="flex justify-between items-center pb-3">
+                    <p class="text-2xl font-bold">{{ member.name }}</p>
+                    <div class="cursor-pointer z-50" onclick="closeModal('modal-member-{{ forloop.counter }}')">
+                        <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                            <path d="M11.245 9.018l6.369-6.369a1.004 1.004 0 00-1.421-1.42L9.825 7.597 3.456 1.229a1.004 1.004 0 00-1.421 1.42l6.369 6.369-6.369 6.369a1.004 1.004 0 001.421 1.42l6.369-6.369 6.369 6.369a1.004 1.004 0 001.421-1.42z"/>
+                        </svg>
+                    </div>
                 </div>
-            </div>
-            <!-- Modal Body -->
-            <div class="text-center">
-                <img src="#" alt="Mehmet Furkan Güneş" class="rounded-full w-32 h-32 mx-auto mb-4">
-                <p class="text-sm mb-8">Furkan, şirketin yazılım geliştirme alanındaki başarılı projelerin arkasındaki isim. Modern teknolojiler ve yenilikçi çözümler konusunda uzman.</p>
-                <a href="https://lightfield0.github.io/resume/" class="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-700 transition duration-300">Portfolyosunu Gör</a>
+                <img src="{% static member.photo.url %}" alt="{{ member.name }}" class="rounded-full w-32 h-32 mx-auto mb-4">
+                <p class="text-sm mb-8">{{ member.bio }}</p>
+                {% if member.portfolio_url %}
+                    <a href="{{ member.portfolio_url }}" class="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-700 transition duration-300">Portfolyosunu Gör</a>
+                {% endif %}
             </div>
         </div>
-    </div>
+    {% endfor %}
+    
 
     <!-- Additional modals for other team members -->
 
