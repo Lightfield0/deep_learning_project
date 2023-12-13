@@ -116,12 +116,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = 'static/'
-
-
+# STATIC_URL ve MEDIA_URL'yi birbirinden ayırın
+STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
+# MEDIA_ROOT, yüklenen medya dosyalarının saklanacağı dizini belirtir
+MEDIA_ROOT = BASE_DIR / 'media'  # Önceden 'deep_learning_app/static/media' idi
+
+# STATICFILES_DIRS, ek statik dosya dizinlerini belirtir
 STATICFILES_DIRS = [
     BASE_DIR / 'deep_learning_app' / 'static',
     # Diğer statik dosya klasörleri

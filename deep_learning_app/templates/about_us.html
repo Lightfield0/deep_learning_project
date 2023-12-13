@@ -50,7 +50,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center justify-center">
                 {% for member in members %}
                     <div class="item flex flex-col items-center justify-center">
-                        <img src="{% static member.photo.url %}" alt="{{ member.name }}" class="rounded-full w-32 h-32 mb-4 cursor-pointer" onclick="openModal('modal-member-{{ forloop.counter }}')">
+                        <img src="{{ member.photo.url }}" alt="{{ member.name }}" class="rounded-full w-32 h-32 mb-4 cursor-pointer" onclick="openModal('modal-member-{{ forloop.counter }}')">
                         <h3 class="font-semibold text-lg">{{ member.name }}</h3>
                         <p class="text-sm text-gray-600">{{ member.title }}</p>
                     </div>
@@ -76,7 +76,7 @@
                         </svg>
                     </div>
                 </div>
-                <img src="{% static member.photo.url %}" alt="{{ member.name }}" class="rounded-full w-32 h-32 mx-auto mb-4">
+                <img src="{{ member.photo.url }}" alt="{{ member.name }}" class="rounded-full w-32 h-32 mx-auto mb-4">
                 <p class="text-sm mb-8">{{ member.bio }}</p>
                 {% if member.portfolio_url %}
                     <a href="{{ member.portfolio_url }}" class="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-700 transition duration-300">Portfolyosunu Gör</a>
