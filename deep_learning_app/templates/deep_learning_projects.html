@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Derin Öğrenme Projeleri{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8" id="projects-container">
+    <h1 class="text-5xl font-bold text-center text-gray-800 mb-12">Derin Öğrenme Projeleri</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Proje Kartı 1 -->
+        <div class="project-card max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out mb-8">
+            <img class="w-full" src="https://user-images.githubusercontent.com/30645315/68544440-37ffdd80-03e9-11ea-8acd-3f3f9b6fc8b3.png" alt="Bitki Yaprak Enfeksiyonu Tanıma Projesi">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Bitki Yaprak Enfeksiyonu Tanıma</div>
+                <p class="text-gray-700 text-base">
+                    Derin öğrenme ile bitki yaprak enfeksiyonlarını otomatik olarak tanıyan proje.
+                </p>
+            </div>
+            <div class="px-6 pt-4 pb-2 flex justify-center">
+                <a href="https://github.com/johri-lab/Automatic-leaf-infection-identifier" class="text-gray-600 hover:text-gray-800">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>        
+
+        <!-- Proje Kartı 2 -->
+        <div class="project-card max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out mb-8">
+            <img class="w-full" src="{% static 'openpose3d.gif' %}" alt="OpenPose Projesi">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">OpenPose</div>
+                <p class="text-gray-700 text-base">
+                    Gerçek zamanlı çoklu insan vücut, yüz ve el kestirimi için derin öğrenme projesi.
+                </p>
+            </div>
+            <div class="px-6 pt-4 pb-2 flex justify-center">
+                <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" class="text-gray-600 hover:text-gray-800">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Proje Kartı 3 -->
+        <div class="project-card max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out mb-8">
+            <img class="w-full" src="https://github.com/jsalbert/Music-Genre-Classification-with-Deep-Learning/raw/master/figs/skyfullofstars.png?raw=true" alt="Müzik Türü Sınıflandırma Projesi">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Müzik Türü Sınıflandırma</div>
+                <p class="text-gray-700 text-base">
+                    Derin öğrenme ile müzik türlerini sınıflandıran proje.
+                </p>
+            </div>
+            <div class="px-6 pt-4 pb-2 flex justify-center">
+                <a href="https://github.com/jsalbert/Music-Genre-Classification-with-Deep-Learning" class="text-gray-600 hover:text-gray-800">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Proje Kartı 4 -->
+        <div class="project-card max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out mb-8">
+            <img class="w-full" src="https://github.com/yashrane/Dog-Breed-Identification/raw/master/predictions/prediction%231.jpg" alt="Köpek Irkı Tanıma Projesi">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Köpek Irkı Tanıma</div>
+                <p class="text-gray-700 text-base">
+                    Derin öğrenme kullanarak köpek ırklarını tanıyan proje.
+                </p>
+            </div>
+            <div class="px-6 pt-4 pb-2 flex justify-center">
+                <a href="https://github.com/yashrane/Dog-Breed-Identification" class="text-gray-600 hover:text-gray-800">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        gsap.from('.project-card', { duration: 1, opacity: 0, y: -50, stagger: 0.2 });
+    
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                gsap.to(this, { duration: 0.5, y: -10, scale: 1.05 });
+            });
+            card.addEventListener('mouseleave', function () {
+                gsap.to(this, { duration: 0.5, y: 0, scale: 1 });
+            });
+        });
+    });
+</script>
+{% endblock %}

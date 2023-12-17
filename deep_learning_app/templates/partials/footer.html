@@ -1,6 +1,32 @@
+{% load static %}
+
 <!-- Footer -->
-<footer class="bg-dark text-white text-center py-3">
-    <div class="container">
-        <p>&copy; 2023 Deep Learning Web Sitesi</p>
+<footer class="bg-gray-800 text-white text-center py-5">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-center items-center">
+            <!-- Logo veya başlık (isteğe bağlı) -->
+            <div class="mr-6">
+                <img src="{% static 'logo.png' %}" alt="Logo" class="h-8 w-8">
+            </div>
+
+            <!-- Footer İçeriği -->
+            <p class="text-sm">&copy; 2023 Deep Learning Web Sitesi. Tüm Hakları Saklıdır.</p>
+        </div>
+
+        <!-- Sosyal Medya İkonları -->
+        <div class="flex justify-center mt-4">
+            <a href="https://twitter.com" class="mx-2">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://facebook.com" class="mx-2">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" class="mx-2">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" class="mx-2">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
     </div>
 </footer>

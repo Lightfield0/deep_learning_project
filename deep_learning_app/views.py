@@ -18,3 +18,6 @@ def about_us(request):
 
 def how_it_works(request):
     return render(request, 'how_it_works.html')
+
+def deep_learning_projects(request):
+    return render(request, 'deep_learning_projects.html')
