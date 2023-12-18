@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto p-6">
+    <div class="flex flex-wrap -mx-4">
+        <!-- İletişim Formu Alanı -->
+        <div class="w-full lg:w-1/2 px-4 mb-4 lg:mb-0">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">Bize Ulaşın</h2>
+                <form action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
+                    
+                    <!-- Form Alanları -->
+                    <!-- Adınız Alanı -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Adınız</label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" name="name" type="text" placeholder="Adınız">
+                    </div>
+
+                    <!-- E-posta Adresiniz Alanı -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">E-posta Adresiniz</label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" name="email" type="email" placeholder="E-posta Adresiniz">
+                    </div>
+
+                    <!-- Mesajınız Alanı -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Mesajınız</label>
+                        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" name="message" placeholder="Mesajınız" rows="4"></textarea>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                            Gönder
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- İletişim Bilgileri Alanı -->
+        <div class="w-full lg:w-1/2 px-4">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">İletişim Bilgileri</h2>
+                <p class="mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i> Adres: Örnek Mahalle, Örnek Sokak No:123</p>
+                <p class="mb-4"><i class="fas fa-phone text-blue-500 mr-2"></i> Telefon: (123) 456-7890</p>
+                <p><i class="fas fa-envelope text-blue-500 mr-2"></i> E-posta: info@ornek.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.addEventListener('load', function() {
+      // Form ve iletişim bilgileri için yükleme animasyonu
+        gsap.from(".bg-white", { duration: 1, opacity: 0, y: 30, stagger: 0.2 });
+
+        // Gönder butonu için hover animasyonu
+        const sendButton = document.querySelector(".bg-blue-500");
+        sendButton.addEventListener('mouseover', () => {
+        gsap.to(sendButton, { duration: 0.2, scale: 1.1 });
+    });
+    sendButton.addEventListener('mouseout', () => {
+        gsap.to(sendButton, { duration: 0.2, scale: 1 });
+    });
+    });
+</script>
+{% if messages %}
+    <script>
+        window.addEventListener('load', function() {
+            {% for message in messages %}
+                Swal.fire({
+                    title: '{{ message.tags|title }}!',
+                    text: '{{ message }}',
+                    icon: '{{ message.tags }}',
+                    confirmButtonText: 'Tamam'
+                });
+            {% endfor %}
+        });
+    </script>
+{% endif %}
+{% endblock %}
